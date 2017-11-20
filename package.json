@@ -1,0 +1,26 @@
+{
+  "name": "CodePushZipTester",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "mkdir -p build/bundle && npm run bundle && node scripts/package.js && du -h build/packaged.zip",
+    "bundle": "react-native bundle --entry-file=index.js --platform=ios --dev=false --bundle-output=build/bundle/main.bundle --assets-dest=build/bundle",
+    "clean": "rm -rf build",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "16.0.0",
+    "react-native": "0.50.3"
+  },
+  "devDependencies": {
+    "babel-jest": "21.2.0",
+    "babel-preset-react-native": "4.0.0",
+    "code-push": "^2.0.3-beta",
+    "jest": "21.2.1",
+    "react-test-renderer": "16.0.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
